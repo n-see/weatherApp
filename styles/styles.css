@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
+.risque{
+    font-family: risque;
+}
+body{
+    background: url("../assets/APIBgImg.png");
+
+}
+.searchContainer{
+    margin-top: 5rem;
+}
+.searchBtn{
+    background-color: rgb(194, 185, 108);
+}
+.displayCity{
+    font-size: 100px;
+    color: white;
+    text-shadow: 10px, 10px;
+}
