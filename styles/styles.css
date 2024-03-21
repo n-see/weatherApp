@@ -10,10 +10,16 @@ body{
     margin-top: 5rem;
 }
 .searchBtn{
-    background-color: rgb(194, 185, 108);
+    background-color: #FFF9C8;
 }
 .displayCity{
     font-size: 100px;
     color: white;
     text-shadow: 10px, 10px;
+}
+.cardBg{
+    background-color: #B6EDFF;
+    opacity: 90%;
+    border-radius: 30px;
+    margin: 10px;
 }
