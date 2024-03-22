@@ -23,3 +23,9 @@ body{
     border-radius: 30px;
     margin: 10px;
 }
+.iconSize{
+    width: 95%;
+}
+.star{
+    width: 20%
+}

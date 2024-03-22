@@ -1,5 +1,8 @@
 let displayCity = document.getElementById("displayCity");
 let currentDate = document.getElementById("currentDate");
+let favBox = document.getElementById("favBox");
+let favCity =[];
+let favArr = [];
 
 let searchInput = document.getElementById("searchInput");
 let currentTemp = document.getElementById("currentTemp");
@@ -12,27 +15,116 @@ let searchBtn = document.getElementById("searchBtn").addEventListener("click", f
     getLocation(searchInput.value);
     searchInput.value = "";
 })
+let cityToDelete = document.getElementsByTagName("cityToDelete");
+
+//Saves the current city to the favorites section
+let favIcon = document.getElementById("favIcon").addEventListener("click", function(){
+    let obj ={
+        "cityName" : favCity["0"].name
+    }
+    favArr.push(obj);
+    console.log(favArr);
+    localStorage.setItem("favoriteCity", JSON.stringify(favArr));
+    console.log(localStorage);
+    let colDiv = document.createElement("div");
+    let rowDiv = document.createElement("div");
+    let pTagCol = document.createElement("div");
+    let imgTagCol = document.createElement("div");
+    pTagCol.classList="col-9";
+    imgTagCol.classList="col-3";
+    rowDiv.classList = "row";
+    colDiv.classList = "col offCanvassDiv";
+    let pTag = document.createElement("p");
+    let imgTag = document.createElement("img");
+    imgTag.src = "../assets/filledHeart.png";
+    pTag.innerText = favCity["0"].name;
+    pTag.addEventListener("click", function(){
+        getLocation(pTag.innerText)
+    })
+    imgTag.addEventListener("click", function(){
+        deleteFunction();
+    });
+    imgTagCol.appendChild(imgTag);
+    pTagCol.appendChild(pTag);
+    rowDiv.appendChild(pTagCol);
+    rowDiv.appendChild(imgTagCol);
+    colDiv.appendChild(rowDiv);
+    favBox.appendChild(colDiv);
+    console.log(localStorage);
+});
+
+//Elements for the five day forecast
 let day1 = document.getElementById("day1");
 let day2 = document.getElementById("day2");
 let day3 = document.getElementById("day3");
 let day4 = document.getElementById("day4");
 let day5 = document.getElementById("day5");
 
+let date1 = document.getElementById("date1");
+let date2 = document.getElementById("date2");
+let date3 = document.getElementById("date3");
+let date4 = document.getElementById("date4");
+let date5 = document.getElementById("date5");
+
+let temp1 = document.getElementById("temp1");
+let temp2 = document.getElementById("temp2");
+let temp3 = document.getElementById("temp3");
+let temp4 = document.getElementById("temp4");
+let temp5 = document.getElementById("temp5");
+
+// Weather icons img locations
+let currentIcon = document.getElementById("currentIcon");
+let day1Icon = document.getElementById("day1Icon");
+let day2Icon = document.getElementById("day2Icon");
+let day3Icon = document.getElementById("day3Icon");
+let day4Icon = document.getElementById("day4Icon");
+let day5Icon = document.getElementById("day5Icon");
+let icon1 = "";
+let icon2 = "";
+let icon3 = "";
+let icon4 = "";
+let icon5 = "";
+let icon6 = "";
+
 let defaultCity = "Stockton, CA";
 let longitude = "";
 let latitude = "";
+let ending = "";
 
+
+//Gets the current month day year to display
 let date = new Date();
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[date.getDay()];
 let month = months[date.getMonth()];
-currentDate.innerText = "TODAY " + day + " " + month  + " " + date.getDate() + ", " + date.getFullYear();
+
+if(Number(date.getDay()) === 21){
+    ending = "st";
+}else if(date.getDay() === "2" || date.getDay() === "22"){
+    ending = "nd";
+}else if(date.getDay() === "3" || date.getDay() === "23"){
+    ending = "rd";
+}
+currentDate.innerText = "TODAY " + day + ", " + month  + " " + date.getDate() + ending;
+
+
+
+//Five day forecast day of the week
 day1.innerText = days[date.getDay() + 1];
 day2.innerText = days[date.getDay() + 2];
 day3.innerText = days[date.getDay() + 3];
 day4.innerText = days[date.getDay() + 4];
 day5.innerText = days[date.getDay() + 5];
+
+//Five day forecast dates
+date1.innerText = month + " " + date.getDate();
+date2.innerText = month + " " + date.getDate();
+date3.innerText = month + " " + date.getDate();
+date4.innerText = month + " " + date.getDate();
+date5.innerText = month + " " + date.getDate();
+
+
 
 //API Fetch to get Longitude and Latitude of the City of Choice -- geocode API
 
@@ -46,7 +138,7 @@ async function getLocation(cityOfChoice){
     displayCity.innerText = apiResponse["0"].name + ", " + apiResponse["0"].state;
     getWeather(latitude, longitude);
     getFiveDay(latitude, longitude);
-
+    favCity = apiResponse;
 }
 
 //Takes the found longitude and Latitude of the city of choice and pull the current weather -- Current weather API
@@ -60,12 +152,83 @@ async function getWeather(lat, lon){
     minTemp.innerText = Math.floor(apiResponse.main.temp_min)  + "°F";
     feelLike.innerText = Math.floor(apiResponse.main.feels_like)  + "°F";
     humidity.innerText = apiResponse.main.humidity + "%";
+    icon1 = apiResponse.weather["0"].icon;
+    currentIcon.src = "../assets/weatherIcons/" + icon1 +".png";
     console.log(apiResponse);
 }
 
 //Five day forecast API
 async function getFiveDay(lat, lon){
     let apiResponse = await fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=f6031c8c11189329722b1b29686e18f7&units=imperial").then((Response) => Response.json());
-
+    temp1.innerText = Math.floor(apiResponse.list["6"].main.temp) + "°F";
+    temp2.innerText = Math.floor(apiResponse.list["12"].main.temp) + "°F";
+    temp3.innerText = Math.floor(apiResponse.list["18"].main.temp) + "°F";
+    temp4.innerText = Math.floor(apiResponse.list["24"].main.temp) + "°F";
+    temp5.innerText = Math.floor(apiResponse.list["30"].main.temp) + "°F";
+    icon2 = apiResponse.list["6"].weather["0"].icon;
+    icon3 = apiResponse.list["12"].weather["0"].icon;
+    icon4 = apiResponse.list["18"].weather["0"].icon;
+    icon5 = apiResponse.list["24"].weather["0"].icon;
+    icon6 = apiResponse.list["30"].weather["0"].icon;
+    day1Icon.src = "../assets/weatherIcons/" + icon2 +".png";
+    day2Icon.src = "../assets/weatherIcons/" + icon3 +".png";
+    day3Icon.src = "../assets/weatherIcons/" + icon4 +".png";
+    day4Icon.src = "../assets/weatherIcons/" + icon5 +".png";
+    day5Icon.src = "../assets/weatherIcons/" + icon6 +".png";
     console.log(apiResponse);
 }
+
+// Will create fav list names if saved in Local Storage
+
+let favData = JSON.parse(localStorage.getItem("favoriteCity"));
+if(favData && favData != null){
+    favArr = favData;
+    for(let i = 0; i < favArr.length; i++){
+        let colDiv = document.createElement("div");
+        let rowDiv = document.createElement("div");
+        let pTagCol = document.createElement("div");
+        let imgTagCol = document.createElement("div");
+        pTagCol.classList="col-9";
+        imgTagCol.classList="col-3";
+        rowDiv.classList = "row";
+        colDiv.classList = "col offCanvassDiv";
+        let pTag = document.createElement("p");
+        pTag.className = "cityToDelete";
+        
+        let imgTag = document.createElement("img");
+        imgTag.src = "../assets/filledHeart.png";
+        pTag.innerText = favArr[i].cityName;
+        pTag.addEventListener("click", function(){
+            getLocation(pTag.innerText)
+        })
+        imgTag.addEventListener("click", function(){
+            deleteFunction();
+        });
+        imgTagCol.appendChild(imgTag);
+        pTagCol.appendChild(pTag);
+        rowDiv.appendChild(pTagCol);
+        rowDiv.appendChild(imgTagCol);
+        colDiv.appendChild(rowDiv);
+        favBox.appendChild(colDiv);
+    }
+}
+
+
+function deleteFunction(){
+        for(let i = 0; i < favArr.length; i++){
+            console.log("delete fire");
+            if(cityToDelete.innerText === favArr[i].cityName){
+                favArr.splice(i, 1);
+                let colDiv = favBox.getElementsByClassName("col")[i];
+                favBox.removeChild(colDiv);
+                imgTagCol.appendChild(imgTag);
+                pTagCol.removeChild(pTag);
+                rowDiv.removeChild(pTagCol);
+                rowDiv.removeChild(imgTagCol);
+                colDiv.removeChild(rowDiv);
+                console.log(favArr);
+            }
+        }
+        
+        localStorage.setItem("cityName", JSON.stringify(favArr));
+};
