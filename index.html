@@ -14,8 +14,8 @@
         <div class="row justify-content-end">
             <div class="col-6 ">
                 <div class="input-group">
-                    <input type="text" id="searchInput" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2" size="100">
-                    <button class="searchBtn btn btn-outline-secondar" type="button" id="searchBtn">Button</button>
+                    <input type="text" id="searchInput" class="form-control orbitron outline" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2" size="100">
+                    <button class="searchBtn outline" type="button" id="searchBtn"><img class="magGlass" src="./assets/MagnifyingGlass.png"></button>
                 </div>
             </div>
         </div>
@@ -35,16 +35,19 @@
         <div class="row">
             <div class="col cardBg">
                 <div class="row">
-                    <div class="col-12">
-                                <h5 id="currentDate"></h5>
-                            <img id="favIcon" src="./assets/hollowHeart.png"/>
+                    <div class="col-12 dateBar">
+                        <div class="date">
+                            <h2 class="sortsFont">TODAY</h2>
+                            <h5 id="currentDate" class="sortsFont today"></h5>
+                        </div>
+                        <img id="favIcon" src="./assets/hollowHeart.png"/>
                     </div>
-                    <div class="col-6">
-                        <h1 id="currentTemp">76</h1>
-                        <p id="currentCondition">Sunny</p>
+                    <div class="col-6 tempNow">
+                        <h1 id="currentTemp" class="orbitron bigTemp">76</h1>
+                        <p id="currentCondition" class="smTemp monoFont">Sunny</p>
                     </div>
                     <!-- Weather icon -->
-                    <div class="col-6">
+                    <div class="col-6 weatherIconBox">
                         <img id="currentIcon" class="iconSize" />
             
                     </div>
@@ -53,23 +56,23 @@
 
             <!-- current temps -->
 
-            <div class="col-6 cardBg">
+            <div class="col-6 cardBg tempsBox">
                 <div class="row">
                     <div class="col-6 ">
-                        <h3 class="text-center">Max. Temperature</h3>
-                        <h5 class="text-center" id="maxTemp">75</h5>
+                        <h3 class="text-center sortsFont">Max. Temperature</h3>
+                        <h5 class="text-center orbitron addSpace tempFont boldTemp" id="maxTemp" >75</h5>
                     </div>
                     <div class="col-6">
-                        <h3 class="text-center">Min. Temperature</h3>
-                        <h5 class="text-center" id="minTemp">60</h5>
+                        <h3 class="text-center sortsFont">Min. Temperature</h3>
+                        <h5 class="text-center orbitron addSpace tempFont boldTemp" id="minTemp" >60</h5>
                     </div>
                     <div class="col-6">
-                        <h3 class="text-center">Feels Like</h3>
-                        <h5 class="text-center" id="feelLike">70</h5>
+                        <h3 class="text-center sortsFont">Feels Like</h3>
+                        <h5 class="text-center orbitron tempFont boldTemp " id="feelLike">70</h5>
                     </div>
                     <div class="col-6">
-                        <h3 class="text-center">Humidity</h3>
-                        <h5 class="text-center" id="humidity">54%</h5>
+                        <h3 class="text-center sortsFont">Humidity</h3>
+                        <h5 class="text-center orbitron tempFont boldTemp" id="humidity">54%</h5>
                     </div>
                 </div>
                 
@@ -81,35 +84,35 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col cardBg text-center">
-                <h4 id="day1">Monday</h4>
-                <h5 id="date1">March 6</h5>
+            <div class="col cardBg text-center fiveDayBox">
+                <h4 id="day1" class="sortsFont">Monday</h4>
+                <h5 id="date1" class="sortsFont">March 6</h5>
                 <img id="day1Icon" class="iconSize"/>
-                <p id="temp1"> Sunny</p>
+                <p id="temp1"  class="orbitron fiveDayBold"> Sunny</p>
             </div>
-            <div class="col cardBg text-center">
-                <h4 id="day2">Monday</h4>
-                <h5 id="date2">March 6</h5>
+            <div class="col cardBg text-center fiveDayBox">
+                <h4 id="day2" class="sortsFont">Monday</h4>
+                <h5 id="date2" class="sortsFont">March 6</h5>
                 <img id="day2Icon" class="iconSize"/>
-                <p id="temp2"> Sunny</p>
+                <p id="temp2"  class="orbitron fiveDayBold"> Sunny</p>
             </div>
-            <div class="col cardBg text-center">
-                <h4 id="day3">Monday</h4>
-                <h5 id="date3">March 6</h5>
+            <div class="col cardBg text-center fiveDayBox">
+                <h4 id="day3" class="sortsFont">Monday</h4>
+                <h5 id="date3" class="sortsFont">March 6</h5>
                 <img id="day3Icon"class="iconSize" />
-                <p id="temp3"> Sunny</p>
+                <p id="temp3"  class="orbitron fiveDayBold"> Sunny</p>
             </div>
-            <div class="col cardBg text-center">
-                <h4 id="day4">Monday</h4>
-                <h5 id="date4">March 6</h5>
+            <div class="col cardBg text-center fiveDayBox">
+                <h4 id="day4" class="sortsFont">Monday</h4>
+                <h5 id="date4" class="sortsFont">March 6</h5>
                 <img id="day4Icon" class="iconSize"/>
-                <p id="temp4"> Sunny</p>
+                <p id="temp4"  class="orbitron fiveDayBold"> Sunny</p>
             </div>
-            <div class="col cardBg text-center">
-                <h4 id="day5">Monday</h4>
-                <h5 id="date5">March 6</h5>
+            <div class="col cardBg text-center fiveDayBox">
+                <h4 id="day5" class="sortsFont">Monday</h4>
+                <h5 id="date5" class="sortsFont">March 6</h5>
                 <img id="day5Icon" class="iconSize"/>
-                <p id="temp5"> Sunny</p>
+                <p id="temp5"  class="orbitron fiveDayBold"> Sunny</p>
             </div>
         </div>
     </div>
@@ -117,16 +120,16 @@
 
 <!-- favorite button offcanvas -->
 <div class="container text-center">
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Favorite Places <img class="star" src="./assets/image 4.png"> </button>
+    <button class="btn btn-primary orbitron" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Favorite Places <img class="star" src="./assets/image 4.png"> </button>
 </div>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+<div class="offcanvas offcanvas-start faveSection" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Your Favorite Places</h5>
+        <h5 class="offcanvas-title faveSection" id="offcanvasWithBothOptionsLabel">Your Favorite Places</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body" id="favBox">
+    <div class="offcanvas-body faveSection" id="favBox">
         <div class="div">
             <div class="row">
                 <div class="col">

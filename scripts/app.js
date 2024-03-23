@@ -15,7 +15,7 @@ let searchBtn = document.getElementById("searchBtn").addEventListener("click", f
     getLocation(searchInput.value);
     searchInput.value = "";
 })
-let cityToDelete = document.getElementsByTagName("cityToDelete");
+let cityToDelete = document.getElementById("cityToDelete");
 
 //Saves the current city to the favorites section
 let favIcon = document.getElementById("favIcon").addEventListener("click", function(){
@@ -33,8 +33,11 @@ let favIcon = document.getElementById("favIcon").addEventListener("click", funct
     pTagCol.classList="col-9";
     imgTagCol.classList="col-3";
     rowDiv.classList = "row";
+    rowDiv.classList = "row favBtn orbitron";
+    imgTag.classList = "favHeart";
     colDiv.classList = "col offCanvassDiv";
     let pTag = document.createElement("p");
+    pTag.setAttribute("id", "cityToDelete");
     let imgTag = document.createElement("img");
     imgTag.src = "../assets/filledHeart.png";
     pTag.innerText = favCity["0"].name;
@@ -106,7 +109,7 @@ if(Number(date.getDay()) === 21){
 }else if(date.getDay() === "3" || date.getDay() === "23"){
     ending = "rd";
 }
-currentDate.innerText = "TODAY " + day + ", " + month  + " " + date.getDate() + ending;
+currentDate.innerText = day + ", " + month  + " " + date.getDate() + ending;
 
 
 
@@ -146,11 +149,11 @@ async function getLocation(cityOfChoice){
 async function getWeather(lat, lon){
     let apiResponse = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=f6031c8c11189329722b1b29686e18f7&units=imperial").then((Response) => Response.json());
     currentTemp.innerText = apiResponse.main.temp;
-    currentTemp.innerText = Math.floor(currentTemp.innerText)+ "°F";
+    currentTemp.innerText = Math.floor(currentTemp.innerText)+ "°";
     currentCondition.innerText = apiResponse.weather["0"].main;
-    maxTemp.innerText = Math.floor(apiResponse.main.temp_max) + "°F"
-    minTemp.innerText = Math.floor(apiResponse.main.temp_min)  + "°F";
-    feelLike.innerText = Math.floor(apiResponse.main.feels_like)  + "°F";
+    maxTemp.innerText = Math.floor(apiResponse.main.temp_max) + "°"
+    minTemp.innerText = Math.floor(apiResponse.main.temp_min)  + "°";
+    feelLike.innerText = Math.floor(apiResponse.main.feels_like)  + "°";
     humidity.innerText = apiResponse.main.humidity + "%";
     icon1 = apiResponse.weather["0"].icon;
     currentIcon.src = "../assets/weatherIcons/" + icon1 +".png";
@@ -160,11 +163,11 @@ async function getWeather(lat, lon){
 //Five day forecast API
 async function getFiveDay(lat, lon){
     let apiResponse = await fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=f6031c8c11189329722b1b29686e18f7&units=imperial").then((Response) => Response.json());
-    temp1.innerText = Math.floor(apiResponse.list["6"].main.temp) + "°F";
-    temp2.innerText = Math.floor(apiResponse.list["12"].main.temp) + "°F";
-    temp3.innerText = Math.floor(apiResponse.list["18"].main.temp) + "°F";
-    temp4.innerText = Math.floor(apiResponse.list["24"].main.temp) + "°F";
-    temp5.innerText = Math.floor(apiResponse.list["30"].main.temp) + "°F";
+    temp1.innerText = Math.floor(apiResponse.list["6"].main.temp) + "°";
+    temp2.innerText = Math.floor(apiResponse.list["12"].main.temp) + "°";
+    temp3.innerText = Math.floor(apiResponse.list["18"].main.temp) + "°";
+    temp4.innerText = Math.floor(apiResponse.list["24"].main.temp) + "°";
+    temp5.innerText = Math.floor(apiResponse.list["30"].main.temp) + "°";
     icon2 = apiResponse.list["6"].weather["0"].icon;
     icon3 = apiResponse.list["12"].weather["0"].icon;
     icon4 = apiResponse.list["18"].weather["0"].icon;
@@ -190,12 +193,12 @@ if(favData && favData != null){
         let imgTagCol = document.createElement("div");
         pTagCol.classList="col-9";
         imgTagCol.classList="col-3";
-        rowDiv.classList = "row";
+        rowDiv.classList = "row favBtn orbitron";
         colDiv.classList = "col offCanvassDiv";
         let pTag = document.createElement("p");
-        pTag.className = "cityToDelete";
-        
+        pTag.setAttribute("id", "cityToDelete");
         let imgTag = document.createElement("img");
+        imgTag.classList = "favHeart";
         imgTag.src = "../assets/filledHeart.png";
         pTag.innerText = favArr[i].cityName;
         pTag.addEventListener("click", function(){
@@ -213,10 +216,10 @@ if(favData && favData != null){
     }
 }
 
-
 function deleteFunction(){
         for(let i = 0; i < favArr.length; i++){
             console.log("delete fire");
+            
             if(cityToDelete.innerText === favArr[i].cityName){
                 favArr.splice(i, 1);
                 let colDiv = favBox.getElementsByClassName("col")[i];
