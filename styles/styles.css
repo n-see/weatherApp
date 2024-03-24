@@ -28,7 +28,7 @@ body{
 .displayCity{
     font-size: 100px;
     color: white;
-    text-shadow: 10px, 10px;
+    text-shadow: 2px 2px 4px black;
 }
 .cardBg{
     background-color: #B6EDFF;
@@ -44,7 +44,8 @@ body{
     width: 95%;
 }
 .star{
-    width: 20%
+    width: 10%;
+    margin-left: 200px;
 }
 .faveSection{
     background-color: #B6EDFF;
@@ -58,6 +59,8 @@ body{
     background-color: white;
     border: 2px solid black;
     border-radius: 20px;;
+    color: black;
+    font-weight: bold;
 }
 .favHeart{
     width: 40%;
@@ -67,6 +70,7 @@ body{
 }
 .outline{
     border: 0.5px solid black;
+    border-radius: 10px;
 }
 .bigTemp{
     font-size: 100px;
@@ -114,4 +118,15 @@ h2{
 }
 .boldTemp{
     font-weight: 450;
+}
+
+.offCanBtn{
+    display: flex;
+    justify-content: center;
+}
+::placeholder{
+    font-weight: 1000;
+}
+.favIcon{
+    width: 10%;
 }

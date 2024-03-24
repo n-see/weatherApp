@@ -121,13 +121,162 @@ day4.innerText = days[date.getDay() + 4];
 day5.innerText = days[date.getDay() + 5];
 
 //Five day forecast dates
-date1.innerText = month + " " + date.getDate();
-date2.innerText = month + " " + date.getDate();
-date3.innerText = month + " " + date.getDate();
-date4.innerText = month + " " + date.getDate();
-date5.innerText = month + " " + date.getDate();
+
+function addOneDays() {
+    // Get the current date
+    let currentDate = new Date();
+
+    // Get the current day of the month
+    let currentDay = currentDate.getDate();
+
+    // Calculate the maximum day of the current month
+    let maxDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    // Add five days
+    currentDate.setDate(currentDay + 1);
+
+    // Check if the new date exceeds the maximum day of the current month
+    if (currentDate.getDate() > maxDayOfMonth) {
+        // Subtract the excess days
+        currentDate.setDate(currentDate.getDate() - maxDayOfMonth);
+        
+        // Move to the next month
+        currentDate.setMonth(currentDate.getMonth() + 1);
+    }
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
 
 
+    // Return the result
+    date1.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+}
+function addTwoDays() {
+    // Get the current date
+    let currentDate = new Date();
+
+    // Get the current day of the month
+    let currentDay = currentDate.getDate();
+
+    // Calculate the maximum day of the current month
+    let maxDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    // Add five days
+    currentDate.setDate(currentDay + 2);
+
+    // Check if the new date exceeds the maximum day of the current month
+    if (currentDate.getDate() > maxDayOfMonth) {
+        // Subtract the excess days
+        currentDate.setDate(currentDate.getDate() - maxDayOfMonth);
+        
+        // Move to the next month
+        currentDate.setMonth(currentDate.getMonth() + 1);
+    }
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
+
+
+    // Return the result
+    date2.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+}
+function addThreeDays() {
+    // Get the current date
+    let currentDate = new Date();
+
+    // Get the current day of the month
+    let currentDay = currentDate.getDate();
+
+    // Calculate the maximum day of the current month
+    let maxDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    // Add five days
+    currentDate.setDate(currentDay + 3);
+
+    // Check if the new date exceeds the maximum day of the current month
+    if (currentDate.getDate() > maxDayOfMonth) {
+        // Subtract the excess days
+        currentDate.setDate(currentDate.getDate() - maxDayOfMonth);
+        
+        // Move to the next month
+        currentDate.setMonth(currentDate.getMonth() + 1);
+    }
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
+
+
+    // Return the result
+    date3.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+}
+function addFourDays() {
+    // Get the current date
+    let currentDate = new Date();
+
+    // Get the current day of the month
+    let currentDay = currentDate.getDate();
+
+    // Calculate the maximum day of the current month
+    let maxDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    // Add five days
+    currentDate.setDate(currentDay + 4);
+
+    // Check if the new date exceeds the maximum day of the current month
+    if (currentDate.getDate() > maxDayOfMonth) {
+        // Subtract the excess days
+        currentDate.setDate(currentDate.getDate() - maxDayOfMonth);
+        
+        // Move to the next month
+        currentDate.setMonth(currentDate.getMonth() + 1);
+    }
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
+
+
+    // Return the result
+    date4.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+}
+function addFiveDays() {
+    // Get the current date
+    let currentDate = new Date();
+
+    // Get the current day of the month
+    let currentDay = currentDate.getDate();
+
+    // Calculate the maximum day of the current month
+    let maxDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    // Add five days
+    currentDate.setDate(currentDay + 5);
+
+    // Check if the new date exceeds the maximum day of the current month
+    if (currentDate.getDate() > maxDayOfMonth) {
+        // Subtract the excess days
+        currentDate.setDate(currentDate.getDate() - maxDayOfMonth);
+        
+        // Move to the next month
+        currentDate.setMonth(currentDate.getMonth() + 1);
+    }
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
+
+
+    // Return the result
+    date5.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+}
+addOneDays();
+addTwoDays();
+addThreeDays();
+addFourDays();
+addFiveDays();
 
 //API Fetch to get Longitude and Latitude of the City of Choice -- geocode API
 
@@ -142,6 +291,19 @@ async function getLocation(cityOfChoice){
     getWeather(latitude, longitude);
     getFiveDay(latitude, longitude);
     favCity = apiResponse;
+
+      //checks if the city is favorite and if it is the heart will be filled
+    for(let i = 0; i < favArr.length; i++){
+        if(favData[i].cityName === apiResponse["0"].name){
+            console.log("in favorite");
+            favIcon.src = "./assets/filledHeart.png";
+        }else{
+            console.log("not in favorite");
+            favIcon.src = "./assets/hollowHeart.png";
+
+        }
+    }
+        
 }
 
 //Takes the found longitude and Latitude of the city of choice and pull the current weather -- Current weather API
@@ -235,3 +397,7 @@ function deleteFunction(){
         
         localStorage.setItem("cityName", JSON.stringify(favArr));
 };
+
+function checkIcon(){
+  
+}
