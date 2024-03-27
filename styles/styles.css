@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Risque&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&family=Sorts+Mill+Goudy:ital@0;1&display=swap');
-.momoFont{
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+.monoFont{
     font-family: "Sometype Mono";
 }
 .sortsFont{
@@ -128,5 +128,25 @@ h2{
     font-weight: 1000;
 }
 .favIcon{
-    width: 10%;
+    width: 13%;
+    padding-right: 20px;
+}
+.favPlaceTitle{
+    margin-bottom: 0px;
+    margin-top: 30px;
+    padding-bottom: 0px;
+    font-size: 25px;
+}
+.col-3{
+    display: flex;
+    justify-content: flex-end;
+}
+#cityToDelete{
+margin-top: 10px;
+    padding: none;
+}
+.currentCondition{
+    font-size: 40px;
+    font-weight: bolder;
+    
 }

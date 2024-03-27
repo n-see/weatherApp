@@ -1,8 +1,10 @@
 let displayCity = document.getElementById("displayCity");
 let currentDate = document.getElementById("currentDate");
 let favBox = document.getElementById("favBox");
+let colDiv = document.getElementsByClassName("colDiv");
 let favCity =[];
 let favArr = [];
+let pickedCity;
 
 let searchInput = document.getElementById("searchInput");
 let currentTemp = document.getElementById("currentTemp");
@@ -15,45 +17,53 @@ let searchBtn = document.getElementById("searchBtn").addEventListener("click", f
     getLocation(searchInput.value);
     searchInput.value = "";
 })
-let cityToDelete = document.getElementById("cityToDelete");
+let cityToDelete = document.getElementsByClassName("cityToDelete");
 
 //Saves the current city to the favorites section
 let favIcon = document.getElementById("favIcon").addEventListener("click", function(){
-    let obj ={
-        "cityName" : favCity["0"].name
-    }
-    favArr.push(obj);
-    console.log(favArr);
-    localStorage.setItem("favoriteCity", JSON.stringify(favArr));
-    console.log(localStorage);
-    let colDiv = document.createElement("div");
-    let rowDiv = document.createElement("div");
-    let pTagCol = document.createElement("div");
-    let imgTagCol = document.createElement("div");
-    pTagCol.classList="col-9";
-    imgTagCol.classList="col-3";
-    rowDiv.classList = "row";
-    rowDiv.classList = "row favBtn orbitron";
-    imgTag.classList = "favHeart";
-    colDiv.classList = "col offCanvassDiv";
-    let pTag = document.createElement("p");
-    pTag.setAttribute("id", "cityToDelete");
-    let imgTag = document.createElement("img");
-    imgTag.src = "../assets/filledHeart.png";
-    pTag.innerText = favCity["0"].name;
-    pTag.addEventListener("click", function(){
-        getLocation(pTag.innerText)
-    })
-    imgTag.addEventListener("click", function(){
-        deleteFunction();
-    });
-    imgTagCol.appendChild(imgTag);
-    pTagCol.appendChild(pTag);
-    rowDiv.appendChild(pTagCol);
-    rowDiv.appendChild(imgTagCol);
-    colDiv.appendChild(rowDiv);
-    favBox.appendChild(colDiv);
-    console.log(localStorage);
+    document.getElementById("favIcon").src = "./assets/filledHeart.png";
+    
+      
+            let obj ={
+                "cityName" : favCity["0"].name
+            }
+            favArr.push(obj);
+            console.log(favArr);
+            localStorage.setItem("favoriteCity", JSON.stringify(favArr));
+            console.log(localStorage);
+            let colDiv = document.createElement("div");
+            let rowDiv = document.createElement("div");
+            let pTagCol = document.createElement("div");
+            let imgTagCol = document.createElement("div");
+            let imgTag = document.createElement("img");
+            let pTag = document.createElement("p");
+            pTagCol.classList="col-9";
+            imgTagCol.classList="col-3";
+            rowDiv.classList = "row";
+            rowDiv.classList = "row favBtn orbitron";
+            imgTag.classList = "favHeart";
+            colDiv.classList = "col offCanvassDiv";
+            // pTag.setAttribute("id", "cityToDelete");
+            pTag.classList = "cityToDelete";
+        
+            imgTag.src = "../assets/filledHeart.png";
+            pTag.innerText = favCity["0"].name;
+            pTag.addEventListener("click", function(){
+                getLocation(pTag.innerText)
+            })
+            imgTag.addEventListener("click", function(){
+                deleteFunction();
+            });
+            imgTagCol.appendChild(imgTag);
+            pTagCol.appendChild(pTag);
+            rowDiv.appendChild(pTagCol);
+            rowDiv.appendChild(imgTagCol);
+            colDiv.appendChild(rowDiv);
+            favBox.appendChild(colDiv);
+            console.log(localStorage);
+        
+    
+
 });
 
 //Elements for the five day forecast
@@ -89,7 +99,7 @@ let icon4 = "";
 let icon5 = "";
 let icon6 = "";
 
-let defaultCity = "Stockton, CA";
+// let defaultCity = "Stockton, CA";
 let longitude = "";
 let latitude = "";
 let ending = "";
@@ -102,13 +112,16 @@ let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 let day = days[date.getDay()];
 let month = months[date.getMonth()];
 
-if(Number(date.getDay()) === 21){
+if(date.getDate() === 1 || date.getDate() === 21 || date.getDate() === 31){
     ending = "st";
-}else if(date.getDay() === "2" || date.getDay() === "22"){
+}else if(date.getDate() === 2 || date.getDate() === 22){
     ending = "nd";
-}else if(date.getDay() === "3" || date.getDay() === "23"){
-    ending = "rd";
+}else if(date.getDate() === 3 || date.getDate() === 23)
+ending = "rd";
+else{
+    ending = "th";
 }
+
 currentDate.innerText = day + ", " + month  + " " + date.getDate() + ending;
 
 
@@ -291,15 +304,19 @@ async function getLocation(cityOfChoice){
     getWeather(latitude, longitude);
     getFiveDay(latitude, longitude);
     favCity = apiResponse;
+    pickedCity = apiResponse["0"].name;
 
       //checks if the city is favorite and if it is the heart will be filled
     for(let i = 0; i < favArr.length; i++){
-        if(favData[i].cityName === apiResponse["0"].name){
+        console.log(favArr);
+        if(favArr[i].cityName == apiResponse["0"].name){
             console.log("in favorite");
-            favIcon.src = "./assets/filledHeart.png";
-        }else{
+            document.getElementById("favIcon").src = "./assets/filledHeart.png";
+            break;
+        }
+        else{
             console.log("not in favorite");
-            favIcon.src = "./assets/hollowHeart.png";
+            document.getElementById("favIcon").src = "./assets/hollowHeart.png";
 
         }
     }
@@ -353,13 +370,14 @@ if(favData && favData != null){
         let rowDiv = document.createElement("div");
         let pTagCol = document.createElement("div");
         let imgTagCol = document.createElement("div");
-        pTagCol.classList="col-9";
+        let imgTag = document.createElement("img");
+        pTagCol.classList="col-9 ";
         imgTagCol.classList="col-3";
         rowDiv.classList = "row favBtn orbitron";
         colDiv.classList = "col offCanvassDiv";
         let pTag = document.createElement("p");
-        pTag.setAttribute("id", "cityToDelete");
-        let imgTag = document.createElement("img");
+        pTag.classList = "cityToDelete";
+        // pTag.setAttribute("id", "cityToDelete");
         imgTag.classList = "favHeart";
         imgTag.src = "../assets/filledHeart.png";
         pTag.innerText = favArr[i].cityName;
@@ -378,26 +396,17 @@ if(favData && favData != null){
     }
 }
 
+//function that deletes the chosen entry from the favorites list
 function deleteFunction(){
-        for(let i = 0; i < favArr.length; i++){
-            console.log("delete fire");
-            
-            if(cityToDelete.innerText === favArr[i].cityName){
-                favArr.splice(i, 1);
-                let colDiv = favBox.getElementsByClassName("col")[i];
-                favBox.removeChild(colDiv);
-                imgTagCol.appendChild(imgTag);
-                pTagCol.removeChild(pTag);
-                rowDiv.removeChild(pTagCol);
-                rowDiv.removeChild(imgTagCol);
-                colDiv.removeChild(rowDiv);
-                console.log(favArr);
-            }
+    console.log("delete Works");
+    for(let i = 0; i < favArr.length; i++){
+        if(cityToDelete[i].innerText === favArr[i].cityName){
+            favArr.splice(i, 1);
+            let rowDiv2 = favBox.getElementsByClassName("rowDiv")[i];
+            rowDiv2.remove();
         }
-        
-        localStorage.setItem("cityName", JSON.stringify(favArr));
+        localStorage.setItem("favoriteCity", JSON.stringify(favArr));
+        console.log(favArr);
+        console.log(localStorage);
+    }
 };
-
-function checkIcon(){
-  
-}
