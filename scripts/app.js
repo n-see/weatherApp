@@ -4,9 +4,15 @@ let favBox = document.getElementById("favBox");
 let colDiv = document.getElementsByClassName("colDiv");
 let favCity =[];
 let favArr = [];
+let cityInFav = [];
 let pickedCity;
 
-let searchInput = document.getElementById("searchInput");
+let searchInput = document.getElementById("searchInput")
+addEventListener("keypress", function(event){
+    if(event.key === "Enter"){
+        getLocation(searchInput.value);
+    }
+});
 let currentTemp = document.getElementById("currentTemp");
 let currentCondition = document.getElementById("currentCondition");
 let maxTemp = document.getElementById("maxTemp");
@@ -21,9 +27,12 @@ let cityToDelete = document.getElementsByClassName("cityToDelete");
 
 //Saves the current city to the favorites section
 let favIcon = document.getElementById("favIcon").addEventListener("click", function(){
-    document.getElementById("favIcon").src = "./assets/filledHeart.png";
-    
-      
+    if(cityInFav.includes(pickedCity)){
+        alert(pickedCity + " is already in favorites");
+    }else{
+        cityInFav.push(pickedCity);
+        document.getElementById("favIcon").src = "./assets/filledHeart.png";
+
             let obj ={
                 "cityName" : favCity["0"].name
             }
@@ -43,7 +52,7 @@ let favIcon = document.getElementById("favIcon").addEventListener("click", funct
             rowDiv.classList = "row favBtn orbitron";
             imgTag.classList = "favHeart";
             colDiv.classList = "col offCanvassDiv";
-            // pTag.setAttribute("id", "cityToDelete");
+            pTag.setAttribute("id", favCity["0"].name);
             pTag.classList = "cityToDelete";
         
             imgTag.src = "../assets/filledHeart.png";
@@ -52,7 +61,7 @@ let favIcon = document.getElementById("favIcon").addEventListener("click", funct
                 getLocation(pTag.innerText)
             })
             imgTag.addEventListener("click", function(){
-                deleteFunction();
+                deleteFunction(pTag.id);
             });
             imgTagCol.appendChild(imgTag);
             pTagCol.appendChild(pTag);
@@ -61,6 +70,8 @@ let favIcon = document.getElementById("favIcon").addEventListener("click", funct
             colDiv.appendChild(rowDiv);
             favBox.appendChild(colDiv);
             console.log(localStorage);
+    }
+    
         
     
 
@@ -161,9 +172,19 @@ function addOneDays() {
         "August", "September", "October", "November", "December"
     ];
 
+    if(currentDate.getDate() === 1 || currentDate.getDate() === 21 ||currentDate.getDate() === 31){
+        ending = "st";
+    }else if(currentDate.getDate() === 2 || currentDate.getDate() === 22){
+        ending = "nd";
+    }else if(currentDate.getDate() === 3 || currentDate.getDate() === 23)
+    ending = "rd";
+    else{
+        ending = "th";
+    }
+    
 
     // Return the result
-    date1.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+    date1.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ending;
 }
 function addTwoDays() {
     // Get the current date
@@ -191,9 +212,18 @@ function addTwoDays() {
         "August", "September", "October", "November", "December"
     ];
 
+    if(currentDate.getDate() === 1 || currentDate.getDate() === 21 ||currentDate.getDate() === 31){
+        ending = "st";
+    }else if(currentDate.getDate() === 2 || currentDate.getDate() === 22){
+        ending = "nd";
+    }else if(currentDate.getDate() === 3 || currentDate.getDate() === 23)
+    ending = "rd";
+    else{
+        ending = "th";
+    }
 
     // Return the result
-    date2.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+    date2.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ending;
 }
 function addThreeDays() {
     // Get the current date
@@ -221,9 +251,18 @@ function addThreeDays() {
         "August", "September", "October", "November", "December"
     ];
 
+    if(currentDate.getDate() === 1 || currentDate.getDate() === 21 ||currentDate.getDate() === 31){
+        ending = "st";
+    }else if(currentDate.getDate() === 2 || currentDate.getDate() === 22){
+        ending = "nd";
+    }else if(currentDate.getDate() === 3 || currentDate.getDate() === 23)
+    ending = "rd";
+    else{
+        ending = "th";
+    }
 
     // Return the result
-    date3.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+    date3.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ending;
 }
 function addFourDays() {
     // Get the current date
@@ -251,9 +290,18 @@ function addFourDays() {
         "August", "September", "October", "November", "December"
     ];
 
+    if(currentDate.getDate() === 1 || currentDate.getDate() === 21 ||currentDate.getDate() === 31){
+        ending = "st";
+    }else if(currentDate.getDate() === 2 || currentDate.getDate() === 22){
+        ending = "nd";
+    }else if(currentDate.getDate() === 3 || currentDate.getDate() === 23)
+    ending = "rd";
+    else{
+        ending = "th";
+    }
 
     // Return the result
-    date4.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+    date4.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ending;
 }
 function addFiveDays() {
     // Get the current date
@@ -283,7 +331,7 @@ function addFiveDays() {
 
 
     // Return the result
-    date5.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate();
+    date5.innerText = monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ending;
 }
 addOneDays();
 addTwoDays();
@@ -377,15 +425,17 @@ if(favData && favData != null){
         colDiv.classList = "col offCanvassDiv";
         let pTag = document.createElement("p");
         pTag.classList = "cityToDelete";
-        // pTag.setAttribute("id", "cityToDelete");
+        pTag.setAttribute("id", favArr[i].cityName);
         imgTag.classList = "favHeart";
         imgTag.src = "../assets/filledHeart.png";
         pTag.innerText = favArr[i].cityName;
         pTag.addEventListener("click", function(){
-            getLocation(pTag.innerText)
+            getLocation(pTag.innerText);
+            console.log(pTag.id)
         })
+        cityInFav.push(pTag.innerText)
         imgTag.addEventListener("click", function(){
-            deleteFunction();
+            deleteFunction(pTag.id);
         });
         imgTagCol.appendChild(imgTag);
         pTagCol.appendChild(pTag);
@@ -397,16 +447,25 @@ if(favData && favData != null){
 }
 
 //function that deletes the chosen entry from the favorites list
-function deleteFunction(){
-    console.log("delete Works");
+function deleteFunction(deletedCity){
     for(let i = 0; i < favArr.length; i++){
-        if(cityToDelete[i].innerText === favArr[i].cityName){
+        console.log("deleted");
+        
+        if(deletedCity === favArr[i].cityName){
+            console.log(deletedCity);
             favArr.splice(i, 1);
-            let rowDiv2 = favBox.getElementsByClassName("rowDiv")[i];
-            rowDiv2.remove();
+            let colDiv = favBox.getElementsByClassName("col")[i];
+            favBox.removeChild(colDiv);
+            console.log(favArr);
+            console.log("deleted" + deletedCity);
+            for(let i = 0; i < cityInFav.length; i++){
+                if(deletedCity == cityInFav[i]){
+                    cityInFav.splice(i, 1);
+                    console.log(cityInFav);
+                }
+            }
+            
         }
-        localStorage.setItem("favoriteCity", JSON.stringify(favArr));
-        console.log(favArr);
-        console.log(localStorage);
     }
+    localStorage.setItem("favoriteCity", JSON.stringify(favArr));
 };
