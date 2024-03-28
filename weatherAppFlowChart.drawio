@@ -1,47 +1,183 @@
-<mxfile host="app.diagrams.net" modified="2024-03-27T03:34:31.699Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="vR5tjX5gocjU--otBt5j" version="23.1.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-28T05:32:06.465Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="th6MndLSis9VKU3HndEb" version="24.2.0" type="device">
   <diagram name="Page-1" id="nZighkGaomc6m6di-DAs">
     <mxGraphModel dx="1434" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="CMpCeE06KLh60s-Qakbh-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="10" y="120" width="480" height="480" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-2" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-2" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="60" y="140" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-3" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-3" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="60" y="240" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-4" value="Process" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-4" value="Process" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="60" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CMpCeE06KLh60s-Qakbh-5" target="CMpCeE06KLh60s-Qakbh-13">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CMpCeE06KLh60s-Qakbh-5" target="CMpCeE06KLh60s-Qakbh-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-5" value="User inputs a city&lt;br&gt;&lt;br&gt;presses search button" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-5" value="User inputs a city&lt;br&gt;&lt;br&gt;presses search button" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="690" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-6" value="Output" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-6" value="Output" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="50" y="520" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-7" value="Sub-Process" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-7" value="Sub-Process" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="270" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-8" value="Decision" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-8" value="Decision" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="260" y="230" width="150" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CMpCeE06KLh60s-Qakbh-9" target="CMpCeE06KLh60s-Qakbh-5">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CMpCeE06KLh60s-Qakbh-9" target="CMpCeE06KLh60s-Qakbh-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-9" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-9" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="690" y="110" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-11" value="Input" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="CMpCeE06KLh60s-Qakbh-11" value="Input" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="60" y="420" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CMpCeE06KLh60s-Qakbh-13" value="With given input will search for the location and give lon and lat of location&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CMpCeE06KLh60s-Qakbh-13" target="4tsgnWChkU0jJ8BD63Zl-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CMpCeE06KLh60s-Qakbh-13" value="With given input will search for the location and give lon and lat of location&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="690" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-1" target="4tsgnWChkU0jJ8BD63Zl-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-1" value="GeoCode API" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-2" target="4tsgnWChkU0jJ8BD63Zl-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-2" value="With Given input pull the data from geocode API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="920" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-5" target="4tsgnWChkU0jJ8BD63Zl-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-5" target="4tsgnWChkU0jJ8BD63Zl-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-5" value="will save the data for lon and lat varialbes&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Will display the city that was looked up&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="890" y="360" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-7" value="Run geoCode APU" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-9" target="4tsgnWChkU0jJ8BD63Zl-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-15" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4tsgnWChkU0jJ8BD63Zl-14">
+          <mxGeometry x="-0.5025" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-9" value="is the searched city in the favorites list?&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="885" y="560" width="190" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-11" value="heart to be filled" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-12" target="4tsgnWChkU0jJ8BD63Zl-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-12" value="Heart to be unfilled" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.714;entryY=0.059;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-9" target="4tsgnWChkU0jJ8BD63Zl-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1161" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-17" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4tsgnWChkU0jJ8BD63Zl-16">
+          <mxGeometry x="0.0947" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-18" value="end" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="990" y="930" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-21" value="Run Current Weather API" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-23" target="4tsgnWChkU0jJ8BD63Zl-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-23" value="Run Current Weather API" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-24" target="4tsgnWChkU0jJ8BD63Zl-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-24" value="with given lon and lat&lt;div&gt;pull current weather data&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-27" target="4tsgnWChkU0jJ8BD63Zl-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-27" value="display current weather data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-29" value="run five day forecast API" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-31" target="4tsgnWChkU0jJ8BD63Zl-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-31" value="run five day forecast API" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-33" target="4tsgnWChkU0jJ8BD63Zl-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-33" value="with given lon and lat&lt;div&gt;pull current weather data&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1730" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1790" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-35" value="display current five day weather data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1730" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-38" value="end" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1730" y="460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-39" target="4tsgnWChkU0jJ8BD63Zl-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-39" value="if there is data in local storage" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-40" value="create favorites button in fav list" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4tsgnWChkU0jJ8BD63Zl-42" target="4tsgnWChkU0jJ8BD63Zl-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-42" value="if the heart on the fav section" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4tsgnWChkU0jJ8BD63Zl-43" value="delete that city from fav list and local storage" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="950" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
