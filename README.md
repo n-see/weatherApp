@@ -20,7 +20,7 @@ The ability to see max temp and min temp of the current day.
 
 Desktop only build
 
-Peer Reviewed by:
+Peer Reviewed by: Alicia
 comments:
 
 This weather API looks beautiful! I love how the custom icons were used instead of the ones from the weather api website. Theres a lot of attention to detail here. I really enjoyed the heart that was used when saving something to the favorites area and how unclicking it took it away. Overall, great job.
