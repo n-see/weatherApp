@@ -342,7 +342,7 @@ addFiveDays();
 //API Fetch to get Longitude and Latitude of the City of Choice -- geocode API
 
 async function getLocation(cityOfChoice){
-    let apiResponse = await fetch("http://api.openweathermap.org/geo/1.0/direct?q="+ cityOfChoice +"&limit=2&appid=f6031c8c11189329722b1b29686e18f7").then((Response) => Response.json());
+    let apiResponse = await fetch("https://api.openweathermap.org/geo/1.0/direct?q="+ cityOfChoice +"&limit=2&appid=f6031c8c11189329722b1b29686e18f7").then((Response) => Response.json());
     console.log(apiResponse);
     latitude = apiResponse["0"].lat.toString();
     longitude = apiResponse["0"].lon.toString();
