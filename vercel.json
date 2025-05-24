@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "DEBIAN_FRONTEND": "noninteractive"
+    },
+    "commands": [
+      "bash ./scripts/vercel-build.sh"
+    ]
+  }
+}
